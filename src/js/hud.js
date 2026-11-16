@@ -8,13 +8,15 @@ const HUD = (() => {
 
     const b = document.createElement('button');
     b.className = 'item'; b.dataset.id = a.id; b.style.setProperty('--color', a.color);
-    b.innerHTML = `<img src="assets/${a.id}_128.png" alt=""><span>${a.nombre}</span>${a.tecla ? `<i class="tecla">${a.tecla}</i>` : ''}`;
+    const icon = a.icon ? `<span class="app-symbol" aria-hidden="true">${a.icon}</span>` : `<img src="assets/${a.id}_128.png" alt="">`;
+    b.innerHTML = `${icon}<span>${a.nombre}</span>${a.tecla ? `<i class="tecla">${a.tecla}</i>` : ''}`;
     b.addEventListener('click', () => ir(a.id));
     riel.appendChild(b);
 
     const t = document.createElement('button');
     t.className = 'tarjeta'; t.style.setProperty('--color', a.color);
-    t.innerHTML = `<img src="assets/${a.id}_256.png" alt=""><h3>${a.nombre}</h3><p>${a.desc}</p>${a.tecla ? `<i class="tecla">${a.tecla}</i>` : ''}`;
+    const cardIcon = a.icon ? `<span class="app-symbol" aria-hidden="true">${a.icon}</span>` : `<img src="assets/${a.id}_256.png" alt="">`;
+    t.innerHTML = `${cardIcon}<h3>${a.nombre}</h3><p>${a.desc}</p>${a.tecla ? `<i class="tecla">${a.tecla}</i>` : ''}`;
     t.addEventListener('click', () => ir(a.id));
     tarjetas.appendChild(t);
 
@@ -35,8 +37,8 @@ const HUD = (() => {
     $('cab-t').textContent = a.nombre;
     $('cab-d').textContent = a.desc;
     const ico = $('cab-ico');
-    ico.hidden = id === 'inicio';
-    if (id !== 'inicio') ico.src = `assets/${id}_128.png`;
+    ico.hidden = id === 'inicio' || !!a.icon;
+    if (id !== 'inicio' && !a.icon) ico.src = `assets/${id}_128.png`;
     const vista = $('v-' + id);
     if (vista) vista.querySelectorAll('iframe[data-src]').forEach(frame => {
       if (!frame.hasAttribute('src')) frame.src = frame.dataset.src;
@@ -80,5 +82,6 @@ const HUD = (() => {
 HUD.registrar({ id: 'combate', nombre: 'Combate', desc: 'Iniciativa, vida y turnos de cada encuentro.', color: '#c04a4a', tecla: '1' });
 HUD.registrar({ id: 'mapa', nombre: 'Mapa', desc: 'Explora el mundo y marca tus lugares.', color: '#5a9a5a', tecla: '2' });
 HUD.registrar({ id: 'libreta', nombre: 'Libreta', desc: 'Notas de sesión, PNJ y tramas.', color: '#5a74c8', tecla: '3' });
+HUD.registrar({ id: 'personaje', nombre: 'Personajes', desc: 'Explora el archivo, las historias y los vínculos de la campaña.', color: '#d3ad69', tecla: '4', icon: '✦' });
 
 document.querySelector('.item[data-id="inicio"]').addEventListener('click', () => HUD.ir('inicio'));

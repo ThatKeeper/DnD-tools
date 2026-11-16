@@ -1,6 +1,6 @@
 # DnD Tools
 
-HUD en español con vistas previas interactivas de la libreta y el mapa. Cada app también se puede abrir por separado desde el HUD.
+HUD en español con vistas previas interactivas de la libreta, el mapa y el archivo de personajes. Cada app también se puede abrir por separado desde el HUD.
 
 ## Probar localmente
 
@@ -24,4 +24,4 @@ Sirve la carpeta `site` con cualquier servidor web estatico; no abras el HTML di
 
 El workflow de GitHub Actions compila el mapa, prepara las rutas relativas y publica el HUD, los iconos y ambas apps al hacer push a `main` o `master`. En GitHub, selecciona **Settings > Pages > Source: GitHub Actions**.
 
-La libreta y el mapa guardan los datos en el almacenamiento local del navegador; no se sincronizan entre dispositivos.
+La libreta y el mapa guardan los datos en el almacenamiento local del navegador; no se sincronizan entre dispositivos. El archivo de personajes conserva sus fichas en IndexedDB del navegador y mantiene una migración compatible desde `arke.v1` en `localStorage`. Sus publicaciones, relaciones e imágenes también son locales a ese navegador; exporta copias de seguridad antes de limpiar los datos del sitio o cambiar de dispositivo.

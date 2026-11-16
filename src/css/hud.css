@@ -51,6 +51,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 }
 .inicio-ico{width:62px;height:62px;display:grid;place-items:center}
 .inicio-ico svg{width:46px;height:46px;stroke:currentColor;fill:none;stroke-width:1.6}
+.app-symbol{width:62px;height:62px;display:grid;place-items:center;color:var(--color);font-size:42px;text-shadow:0 0 16px color-mix(in srgb,var(--color) 65%,transparent)}
 
 /* Barra superior */
 .barra{
@@ -118,6 +119,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 }
 .tarjeta:hover{transform:translateY(-4px);border-color:var(--color);box-shadow:0 10px 30px #0009,0 0 22px color-mix(in srgb,var(--color) 35%,transparent)}
 .tarjeta img{width:96px;height:96px;display:block;margin-bottom:10px;filter:drop-shadow(0 4px 6px #0009)}
+.tarjeta .app-symbol{width:96px;height:96px;margin-bottom:10px;font-size:72px}
 .tarjeta h3{margin:0 0 4px;font-size:1.25rem;color:var(--texto)}
 .tarjeta p{margin:0;color:var(--apagado);line-height:1.45}
 .tarjeta .tecla{position:absolute;right:14px;top:14px;font-size:.8rem;color:var(--apagado);border:1px solid var(--borde);border-radius:6px;padding:1px 8px;background:var(--fondo)}
@@ -162,7 +164,7 @@ button{font:inherit;color:inherit;cursor:pointer}
     border-right:0;border-top:2px solid var(--borde)}
   .riel .sep{display:none}
   .item{width:auto;flex:1;padding:4px 0}
-  .item img,.inicio-ico{width:42px;height:42px}
+  .item img,.inicio-ico,.item .app-symbol{width:42px;height:42px}
   .item .tecla{display:none}
   .barra{padding:10px 14px;flex-wrap:wrap;gap:8px}
   .escenario{margin:8px 10px}
