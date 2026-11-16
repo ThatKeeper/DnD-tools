@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DnD Tools</title>
+<link rel="icon" href="assets/combate_64.png">
+<link rel="stylesheet" href="src/css/hud.css">
+</head>
+<body>
+
+<nav class="riel" id="riel" aria-label="Aplicaciones">
+  <button class="item on" data-id="inicio" style="--color:#d8bb8c" aria-label="Inicio">
+    <span class="inicio-ico"><svg viewBox="0 0 48 48"><path d="M24 4l5 15 15 5-15 5-5 15-5-15-15-5 15-5z"/></svg></span>
+    <span>Inicio</span><i class="tecla">0</i>
+  </button>
+  <div class="sep"></div>
+</nav>
+
+<header class="barra">
+  <div class="titulo"><b>Mesa del Dungeon Master</b><small id="sub">Elige una herramienta para empezar</small></div>
+  <div class="dados" id="dados" role="group" aria-label="Tirar dados"></div>
+</header>
+
+<main class="escenario">
+  <i class="esq a"></i><i class="esq b"></i><i class="esq c"></i><i class="esq d"></i>
+  <div class="cab">
+    <img id="cab-ico" alt="" hidden>
+    <div><h1 id="cab-t">Bienvenido, Dungeon Master</h1><p id="cab-d">Todo lo que necesitas para la sesión, en un solo sitio.</p></div>
+  </div>
+  <div class="vistas" id="vistas">
+    <section class="vista" id="v-inicio">
+      <div class="tarjetas" id="tarjetas"></div>
+      <p class="consejo">Pulsa 1, 2 o 3 para saltar entre herramientas, 0 para volver aquí. Puedes tirar dados en cualquier momento desde la barra de arriba.</p>
+    </section>
+  </div>
+</main>
+
+<!-- El combate conserva su ejemplo hasta conectar el tracker completo. -->
+<template id="tpl-combate">
+  <div class="fila turno"><div class="ini">18</div><div><strong>Lyra, pícara</strong><small>Turno actual</small></div><div class="pv"><i style="width:82%"></i></div></div>
+  <div class="fila"><div class="ini">14</div><div><strong>Thorin, guerrero</strong><small>Concentrado</small></div><div class="pv"><i style="width:80%"></i></div></div>
+  <div class="fila"><div class="ini">9</div><div><strong>Goblin jefe</strong><small>Enemigo</small></div><div class="pv"><i style="width:35%"></i></div></div>
+  <p class="nota">Ejemplo de relleno. Sustituye el contenido de <code>&lt;template id="tpl-combate"&gt;</code> por tu tracker.</p>
+</template>
+<template id="tpl-mapa">
+  <div class="app-preview">
+    <div class="preview-head">
+      <div class="preview-label"><span class="live-dot"></span><strong>Mapa del mundo conocido</strong><small>Vista previa interactiva; tus cambios se guardan en este navegador.</small></div>
+      <a class="abrir-app" href="Mapa/" target="_blank" rel="noopener">Abrir mapa completo <span aria-hidden="true">↗</span></a>
+    </div>
+    <iframe title="Vista previa interactiva del mapa" data-src="Mapa/" loading="lazy" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
+  </div>
+</template>
+<template id="tpl-libreta">
+  <div class="app-preview">
+    <div class="preview-head">
+      <div class="preview-label"><span class="live-dot"></span><strong>Libreta de aventuras</strong><small>Escribe, dibuja y navega tus páginas desde esta vista previa.</small></div>
+      <a class="abrir-app" href="Libreta/" target="_blank" rel="noopener">Abrir libreta completa <span aria-hidden="true">↗</span></a>
+    </div>
+    <iframe title="Vista previa interactiva de la libreta" data-src="Libreta/" loading="lazy" allow="fullscreen; clipboard-read; clipboard-write"></iframe>
+  </div>
+</template>
+
+<script src="src/js/hud.js"></script>
+</body>
+</html>

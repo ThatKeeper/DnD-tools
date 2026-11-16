@@ -1,0 +1,10 @@
+
+:root {
+    --f: 'La Belle Aurore', 'Brush Script MT', cursive;
+    --ink: #2b1a0e;
+    --lh: 4.4cqw;
+
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+}

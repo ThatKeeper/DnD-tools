@@ -1,0 +1,56 @@
+
+.mk {
+    position: absolute;
+    width: 5.6cqw;
+    aspect-ratio: 1;
+
+    transform: translate(-50%, -50%) rotate(var(--r, 0deg));
+
+    z-index: 4;
+    cursor: grab;
+    touch-action: none;
+
+    filter: drop-shadow(
+        0 .3cqw .35cqw rgba(0, 0, 0, .5)
+    );
+}
+
+.mk svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.mk .g,
+.mkb .g {
+    fill: rgba(0, 0, 0, .5);
+    stroke: rgba(255, 255, 255, .3);
+    stroke-width: .6;
+    paint-order: stroke;
+}
+
+.mk.ghost {
+    position: fixed;
+    width: 60px;
+
+    z-index: 200;
+    pointer-events: none;
+
+    transform: translate(-50%, -50%) scale(1.15) rotate(-6deg);
+
+    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, .5));
+}
+
+.leaf .mk {
+    pointer-events: none;
+}
+
+.mkb {
+    touch-action: none;
+    cursor: grab;
+}
+
+#mks.full .mkb {
+    opacity: .45;
+    filter: grayscale(.6);
+}

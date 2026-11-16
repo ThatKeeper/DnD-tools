@@ -1,0 +1,132 @@
+
+.types {
+    display: flex;
+    gap: 7px;
+    padding-bottom: 12px;
+}
+
+.type {
+    width: 46px;
+    height: 50px;
+
+    border: 0;
+    padding: 0;
+
+    cursor: pointer;
+    border-radius: 5px 5px 3px 3px;
+
+    font-size: 27px;
+    line-height: 50px;
+    color: #e9d7b0;
+
+    background: linear-gradient(#7a4f27, #5a3719);
+
+    box-shadow:
+        0 5px 0 #2a170a,
+        0 8px 6px #000a,
+        inset 0 1px 0 #a87a45;
+
+    text-shadow: 0 -1px 0 #000a;
+
+    transition:
+        transform .22s cubic-bezier(.3, 1.6, .5, 1),
+        box-shadow .22s,
+        filter .22s;
+}
+
+.type:hover {
+    transform: translateY(-3px);
+}
+
+.type.on {
+    transform: translateY(-8px);
+
+    color: #2b1a0e;
+    text-shadow: 0 1px 0 #fff8;
+
+    background: linear-gradient(#f2e2b4, #d3b982);
+
+    box-shadow:
+        0 12px 0 #2a170a,
+        0 15px 10px #000a;
+
+    filter: drop-shadow(0 0 7px #ffd98a88);
+}
+
+.plate {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 6px 14px;
+
+    border-radius: 8px;
+    color: #3a2410;
+
+    font-variant: small-caps;
+    letter-spacing: .08em;
+
+    background: linear-gradient(#e2c683, #b08a45);
+
+    box-shadow:
+        inset 0 1px 0 #fff6,
+        0 3px 4px #0008;
+
+    border: 1px solid #6b4a24;
+}
+
+.dw {
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dot {
+    border-radius: 50%;
+    display: block;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 96px;
+    height: 6px;
+
+    border-radius: 3px;
+    background: linear-gradient(#3a2410, #6a4824);
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle at 35% 30%,
+        #fff2c4,
+        #c9a45a 55%,
+        #7a5a22
+    );
+
+    border: 1px solid #4a3010;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+    background: #c9a45a;
+
+    border: 1px solid #4a3010;
+    cursor: pointer;
+}

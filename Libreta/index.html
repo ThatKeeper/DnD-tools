@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libreta</title>
+    
+    <link rel="icon" type="image/x-icon" href="../assets/libreta.ico">
+
+    <link rel="stylesheet" href="./src/css/00-colors.css">
+    <link rel="stylesheet" href="./src/css/01-base.css">
+    <link rel="stylesheet" href="./src/css/02-desk.css">
+    <link rel="stylesheet" href="./src/css/03-tools.css">
+    <link rel="stylesheet" href="./src/css/04-ink-seals.css">
+    <link rel="stylesheet" href="./src/css/05-markers.css">
+    <link rel="stylesheet" href="./src/css/06-controls.css">
+    <link rel="stylesheet" href="./src/css/07-book.css">
+    <link rel="stylesheet" href="./src/css/08-pages.css">
+    <link rel="stylesheet" href="./src/css/09-writing.css">
+    <link rel="stylesheet" href="./src/css/10-drawing.css">
+    <link rel="stylesheet" href="./src/css/11-navigation.css">
+
+</head>
+<body>
+
+    <!--SVG-->
+
+    <svg width="0" height="0" style="position: absolute;">
+
+        <symbol id="wax" viewBox="0 0 50 50">
+
+            <path
+                d="M25 3c6 0 9 4 14 5s9 5 8 11c-1 5 3 8 2 13-1 6-6 8-9 12-4 4-9 3-15 3s-9-3-13-7S2 33 3 27 3 15 8 10 18 3 25 3z"
+                style="fill: var(--w);"
+                stroke="rgba(0,0,0,.3)"
+            />
+
+            <circle
+                cx="25"
+                cy="25"
+                r="16"
+                fill="none"
+                stroke="rgba(0,0,0,.3)"
+                stroke-width="2"
+            />
+
+            <circle
+                cx="24.5"
+                cy="24.5"
+                r="16"
+                fill="none"
+                stroke="rgba(255,255,255,.25)"
+                stroke-width="1"
+            />
+
+        </symbol>
+
+    </svg>
+
+
+    <!--ESCRITORIO PRINCIPAL-->
+
+    <div class="desk" id="bar">
+
+
+        <!-- HERRAMIENTAS -->
+
+        <div class="grp">
+
+            <div class="holder">
+
+                <!-- Pluma -->
+
+                <button
+                    class="tool on"
+                    data-m="write"
+                    data-n="Pluma"
+                    title="Pluma: escribir"
+                >
+                    <svg viewBox="0 0 40 130">
+
+                        <path
+                            d="M21 3C40 16 38 58 23 95L19 95C9 62 6 22 21 3Z"
+                            fill="#efe6cf"
+                            stroke="#7a6640"
+                            stroke-width="1.2"
+                        />
+
+                        <path
+                            d="M21 7 20.5 100"
+                            stroke="#7a6640"
+                            stroke-width="1.6"
+                        />
+
+                        <path
+                            d="M20 20l-9 6M20 36l-11 7M20 52l-9 8M21 22l10 4M21 38l11 5M21 54l8 7"
+                            stroke="#b8a77c"
+                            stroke-width="1"
+                        />
+
+                        <path
+                            d="M17 96h7l-1.5 12L20.5 128 18.5 108z"
+                            fill="#c9a45a"
+                            stroke="#6b4a24"
+                        />
+
+                        <path
+                            d="M20.5 108v18"
+                            stroke="#3a2312"
+                        />
+
+                    </svg>
+                </button>
+
+
+                <!-- Lápiz -->
+
+                <button
+                    class="tool"
+                    data-m="draw"
+                    data-n="Lápiz"
+                    title="Lápiz: dibujar"
+                >
+                    <svg viewBox="0 0 40 130">
+
+                        <rect
+                            x="13" y="6"
+                            width="14" height="9"
+                            rx="2"
+                            fill="#e88a9a"
+                            stroke="#6b3a40"
+                        />
+
+                        <rect
+                            x="13" y="15"
+                            width="14" height="8"
+                            fill="#b9b9b9"
+                            stroke="#555"
+                        />
+
+                        <rect
+                            x="13" y="23"
+                            width="14" height="74"
+                            fill="#d9a21f"
+                            stroke="#6b4a10"
+                        />
+
+                        <path
+                            d="M20 23v74"
+                            stroke="#a87810"
+                            stroke-width="2"
+                        />
+
+                        <path
+                            d="M13 97h14l-7 28z"
+                            fill="#ecc88e"
+                            stroke="#6b4a24"
+                        />
+
+                        <path
+                            d="M17.5 114h5L20 125z"
+                            fill="#333"
+                        />
+
+                    </svg>
+                </button>
+
+
+                <!-- Goma -->
+
+                <button
+                    class="tool"
+                    data-m="erase"
+                    data-n="Goma"
+                    title="Goma: borrar"
+                >
+                    <svg viewBox="0 0 40 130">
+
+                        <rect
+                            x="8" y="50"
+                            width="24" height="74"
+                            rx="4"
+                            fill="#ee9aa6"
+                        />
+
+                        <path
+                            d="M8 54a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v22H8z"
+                            fill="#2f5d9c"
+                        />
+
+                        <rect
+                            x="8" y="50"
+                            width="24" height="74"
+                            rx="4"
+                            fill="none"
+                            stroke="#5a3a40"
+                            stroke-width="1.2"
+                        />
+
+                        <path
+                            d="M8 76h24"
+                            stroke="#fff"
+                            stroke-width="2"
+                        />
+
+                    </svg>
+                </button>
+
+            </div>
+
+            <span class="cap" id="cap">Pluma</span>
+
+        </div>
+
+
+        <!-- TINTAS Y CONFIGURACIÓN DEL TRAZO -->
+
+        <div class="grp">
+
+            <div class="tray" id="inks"></div>
+
+            <label class="plate">
+
+                Trazo
+
+                <input
+                    type="range"
+                    id="size"
+                    min="1"
+                    max="14"
+                    value="4"
+                >
+
+                <span class="dw">
+                    <i id="dot"></i>
+                </span>
+
+            </label>
+
+            <button
+                class="plate lamp"
+                id="lines"
+                title="Líneas guía (Alt+L)"
+            >
+                Líneas guía
+            </button>
+
+        </div>
+
+
+        <!-- SELLOS -->
+
+        <div class="grp">
+
+            <div class="row">
+
+                <!-- Negrita -->
+
+                <button
+                    class="seal"
+                    data-c="bold"
+                    title="Negrita"
+                    style="--w: #8e1b12;"
+                >
+                    <svg viewBox="0 0 50 50">
+                        <use href="#wax"/>
+                        <text x="25" y="33">N</text>
+                    </svg>
+                </button>
+
+
+                <!-- Cursiva -->
+
+                <button
+                    class="seal it"
+                    data-c="italic"
+                    title="Cursiva"
+                    style="--w: #1f3f7d;"
+                >
+                    <svg viewBox="0 0 50 50">
+                        <use href="#wax"/>
+                        <text x="25" y="33">C</text>
+                    </svg>
+                </button>
+
+
+                <!-- Título -->
+
+                <button
+                    class="seal ti"
+                    data-c="title"
+                    title="Título"
+                    style="--w: #2d5a27;"
+                >
+                    <svg viewBox="0 0 50 50">
+                        <use href="#wax"/>
+                        <text x="25" y="33">T</text>
+                    </svg>
+                </button>
+
+
+                <!-- Deshacer -->
+
+                <button
+                    class="seal"
+                    id="undo"
+                    title="Deshacer dibujo"
+                    style="--w: #9a7420;"
+                >
+                    <svg viewBox="0 0 50 50">
+                        <use href="#wax"/>
+                        <text x="25" y="33">↶</text>
+                    </svg>
+                </button>
+
+            </div>
+
+            <span class="cap">Sellos</span>
+
+        </div>
+
+
+        <!-- TIPOGRAFÍAS -->
+
+        <div class="grp">
+
+            <div class="types">
+
+                <button
+                    class="type on"
+                    data-f="'La Belle Aurore','Brush Script MT',cursive"
+                    title="Pluma"
+                    style="font-family: 'La Belle Aurore', cursive;"
+                >
+                    Aa
+                </button>
+
+                <button
+                    class="type"
+                    data-f="'Caveat',cursive"
+                    title="Cursiva clara"
+                    style="font-family: 'Caveat', cursive;"
+                >
+                    Aa
+                </button>
+
+                <button
+                    class="type"
+                    data-f="'IM Fell English',Georgia,serif"
+                    title="Antigua"
+                    style="font-family: 'IM Fell English', serif;"
+                >
+                    Aa
+                </button>
+
+                <button
+                    class="type"
+                    data-f="'UnifrakturCook',serif"
+                    title="Gótica"
+                    style="font-family: 'UnifrakturCook', serif;"
+                >
+                    Aa
+                </button>
+
+            </div>
+
+            <span class="cap">Tipos</span>
+
+        </div>
+
+
+        <!-- MARCADORES -->
+
+        <div class="grp">
+
+            <div class="row" id="mks"></div>
+
+            <span class="cap" id="mcap">
+                Marcadores 0/4
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!--LIBRO-->
+
+    <div class="book" id="book">
+
+        <div class="cover">
+
+            <div class="pages" id="pages">
+
+
+                <!-- PÁGINA IZQUIERDA -->
+
+                <div class="page pl" id="L">
+
+                    <div
+                        class="text"
+                        contenteditable="true"
+                        spellcheck="false"
+                    ></div>
+
+                    <canvas
+                        width="660"
+                        height="912"
+                    ></canvas>
+
+                    <span class="num"></span>
+
+                </div>
+
+
+                <!-- PÁGINA DERECHA -->
+
+                <div class="page pr" id="R">
+
+                    <div
+                        class="text"
+                        contenteditable="true"
+                        spellcheck="false"
+                    ></div>
+
+                    <canvas
+                        width="660"
+                        height="912"
+                    ></canvas>
+
+                    <span class="num"></span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--NAVEGACIÓN-->
+
+    <div class="nav">
+
+        <button id="prev">
+            ‹ Anterior
+        </button>
+
+        <span id="pos"></span>
+
+        <button id="next">
+            Siguiente ›
+        </button>
+
+        <button id="add">
+            + Hoja
+        </button>
+
+    </div>
+
+
+    <!--INSTRUCCIONES-->
+
+    <div class="hint">
+
+        Toca la pluma para escribir, el lápiz para dibujar y la goma para borrar;
+        moja en un tintero para cambiar de color.
+
+        <br>
+
+        Atajos:
+
+        Ctrl+B negrita ·
+        Ctrl+I cursiva ·
+        Ctrl+Z deshacer ·
+        Ctrl+S guardar ·
+
+        Alt+1/2/3 pluma, lápiz, goma ·
+        Alt+4 a 8 tintas ·
+        Alt+T título ·
+        Alt+L líneas ·
+        Alt+↑↓ trazo ·
+        Alt+N hoja nueva ·
+
+        ← → (o Alt+← → al escribir) pasar página ·
+        Esc vuelve a la pluma.
+
+        <br>
+
+        Todo se guarda solo en este navegador.
+
+    </div>
+
+    <script src="src/js/00-state.js"></script>
+    <script src="src/js/01-markers.js"></script>
+    <script src="src/js/02-canvas.js"></script>
+    <script src="src/js/03-controls.js"></script>
+    <script src="src/js/04-init.js"></script>
+</body>
+</html>

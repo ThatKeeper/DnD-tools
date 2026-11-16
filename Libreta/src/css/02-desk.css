@@ -1,0 +1,81 @@
+
+.desk {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 34px;
+    justify-content: center;
+    align-items: flex-end;
+
+    width: min(96vw, 1100px);
+    box-sizing: border-box;
+
+    padding: 38px 18px 12px;
+    margin-bottom: 12px;
+
+    border: 2px solid #1d1008;
+    border-radius: 12px;
+
+    box-shadow:
+        0 6px 14px #000a,
+        inset 0 2px 0 #7a5530;
+
+    background:
+        repeating-linear-gradient(
+            92deg,
+            rgba(0, 0, 0, .09) 0 2px,
+            transparent 2px 8px
+        ),
+        linear-gradient(#5c3a1e, #3a2312);
+}
+
+.grp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.row {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cap {
+    font-size: 14px;
+    letter-spacing: .1em;
+    font-variant: small-caps;
+    color: #e9d7b0;
+    opacity: .85;
+}
+
+.holder {
+    position: relative;
+    display: flex;
+    gap: 4px;
+}
+
+.holder::after {
+    content: "";
+    position: absolute;
+    left: -8px;
+    right: -8px;
+    bottom: 0;
+    height: 28px;
+
+    border-radius: 6px 6px 12px 12px;
+    pointer-events: none;
+    z-index: 2;
+
+    box-shadow: 0 3px 6px #000a;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #d9b46a 0 6px,
+            transparent 6px 12px
+        ) 0 8px / 100% 2px no-repeat,
+        linear-gradient(#7a4a22, #4a2a12);
+}

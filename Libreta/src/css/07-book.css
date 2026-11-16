@@ -1,0 +1,31 @@
+
+.book {
+    width: min(96vw, 1100px);
+    container-type: inline-size;
+}
+
+.cover {
+    background: linear-gradient(135deg, #4b2c16, #2a170a);
+
+    padding: 1.6cqw;
+    border-radius: 1.2cqw;
+
+    box-shadow:
+        0 2cqw 4cqw #000a,
+        inset 0 0 2cqw #0008;
+}
+
+.pages {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    perspective: 260cqw;
+
+    box-shadow:
+        0 0 0 .25cqw #e3d2a4,
+        0 0 0 .4cqw #7c5a2c,
+        .5cqw .5cqw 0 .4cqw #d8c18c,
+        -.5cqw .5cqw 0 .4cqw #d8c18c;
+}

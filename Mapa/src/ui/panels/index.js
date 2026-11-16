@@ -1,0 +1,21 @@
+// src/ui/panels/index.js
+export { closeDock } from './closeDock';
+export { handleMapTap } from './handleMapTap';
+export { hideBiomeTip } from './hideBiomeTip';
+export { openDock } from './openDock';
+export { refreshAfterFilterChange } from './refreshAfterFilterChange';
+export { refreshAfterRoleChange } from './refreshAfterRoleChange';
+export { refreshAfterUserDataChange } from './refreshAfterUserDataChange';
+export { requestRoleSwitch } from './requestRoleSwitch';
+export { setTab } from './setTab';
+export { setTool } from './setTool';
+export { showBiomeTip } from './showBiomeTip';
+export { showToast } from './showToast';
+export { sizeMinimap } from './sizeMinimap';
+export { syncQualityPanel } from './syncQualityPanel';
+export { syncRoleUi } from './syncRoleUi';
+export { syncShortcutTooltips } from './syncShortcutTooltips';
+export { syncViewOptions } from './syncViewOptions';
+export { toastWithUndo } from './toastWithUndo';
+export { updateHistoryButtons } from './updateHistoryButtons';
+export { updateStatsPanel } from './updateStatsPanel';

@@ -1,0 +1,47 @@
+
+.tool {
+    background: none;
+    border: 0;
+    padding: 0;
+
+    width: 38px;
+    height: 122px;
+
+    cursor: pointer;
+    transform-origin: 50% 100%;
+
+    transition:
+        transform .28s cubic-bezier(.3, 1.5, .5, 1),
+        filter .25s;
+}
+
+.tool svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+.tool:nth-child(1) {
+    transform: rotate(-7deg);
+}
+
+.tool:nth-child(2) {
+    transform: rotate(3deg);
+}
+
+.tool:nth-child(3) {
+    transform: rotate(9deg);
+}
+
+.tool:not(.on):hover {
+    transform: translateY(-8px) rotate(0);
+}
+
+.tool.on {
+    transform: translateY(-30px) rotate(0);
+
+    filter:
+        drop-shadow(0 7px 5px #0009)
+        drop-shadow(0 0 9px #ffd98a99);
+}

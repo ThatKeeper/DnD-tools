@@ -1,0 +1,372 @@
+#chip {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+  padding: 6px 12px;
+  font-size: 21px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  max-width: calc(100vw - 24px);
+  text-align: center;
+}
+#pop {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  width: min(360px, calc(100vw - 24px));
+  padding: 10px 12px;
+  z-index: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#cpop,
+#lpop,
+#pind,
+#sharedd,
+#expd {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  width: min(340px, calc(100vw - 24px));
+  padding: 10px 12px;
+  z-index: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#helpd {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(430px, calc(100vw - 24px));
+  max-height: calc(100% - 40px);
+  overflow: auto;
+  padding: 10px 14px;
+  z-index: 9;
+  font-size: 21px;
+}
+#helpd h2 {
+  margin: 0 0 6px;
+  font: 700 26px "Caveat", cursive;
+}
+.help-group {
+  font: 700 21px "Caveat", cursive;
+  margin: 8px 0 2px;
+  opacity: 0.8;
+}
+.help-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 2px 0;
+  border-bottom: 1px dotted var(--ink);
+}
+.help-row span:first-child {
+  flex: 1;
+}
+.help-row.off {
+  opacity: 0.55;
+}
+kbd {
+  font: 700 17px ui-monospace, Menlo, Consolas, monospace;
+  background: #f6ead0;
+  border: 1.5px solid var(--ink);
+  border-radius: 5px;
+  padding: 0 6px;
+}
+.row2 {
+  display: flex;
+  gap: 6px;
+}
+.row2 select {
+  flex: 1;
+  min-width: 0;
+}
+#pop select,
+#lpop select {
+  font: 500 20px "Caveat", cursive;
+  background: #f6ead0;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  padding: 3px 6px;
+  box-sizing: border-box;
+}
+#lpop select {
+  width: 100%;
+}
+.rng {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+}
+.rng input[type="range"] {
+  flex: 1;
+  accent-color: #6b2e1c;
+}
+.rng input[type="color"] {
+  width: 56px;
+  height: 30px;
+  padding: 0;
+  border: 2px solid var(--ink);
+  background: #f6ead0;
+}
+.icons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+  max-height: 104px;
+  overflow: auto;
+}
+.icons button {
+  padding: 3px 0;
+  border: 2px dashed var(--ink);
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--ink);
+  display: flex;
+  justify-content: center;
+}
+.icons button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--hud);
+  border-style: solid;
+}
+.icons button svg {
+  width: 26px;
+  height: 26px;
+}
+.icons .none {
+  grid-column: 1 / -1;
+  opacity: 0.7;
+}
+#tip {
+  pointer-events: none;
+  padding: 4px 10px;
+  font-size: 20px;
+  white-space: nowrap;
+  z-index: 6;
+}
+#mini {
+  right: max(12px, env(safe-area-inset-right, 0px));
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  padding: 0;
+  cursor: pointer;
+  touch-action: none;
+  border-width: 2px;
+}
+#hint {
+  left: max(12px, env(safe-area-inset-left, 0px));
+}
+
+.cat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+}
+.cat input[type="checkbox"] {
+  flex: none;
+}
+.cat .sw {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  color: #fff6de;
+}
+.cat .sw svg {
+  width: 16px;
+  height: 16px;
+}
+.cat .nm {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cat em {
+  opacity: 0.7;
+  font-style: normal;
+}
+.cat button {
+  font: 700 17px "Caveat", cursive;
+  background: transparent;
+  border: 1px dashed var(--ink);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0 6px;
+}
+#dock #sugg {
+  max-height: 260px;
+  margin: 2px 0 6px;
+  background: #f6ead0;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+}
+#dock #sugg[hidden] {
+  display: none;
+}
+#dock #sugg li {
+  padding: 3px 6px;
+  cursor: pointer;
+  border-bottom: 1px dotted var(--ink);
+}
+#dock #sugg li[aria-selected="true"],
+#dock #sugg li:hover {
+  background: #e8d6a8;
+}
+#sugg .sg-body {
+  flex: 1;
+  min-width: 0;
+}
+#sugg .sg-body small {
+  display: block;
+  opacity: 0.7;
+  font-size: 16px;
+}
+#sugg mark {
+  background: #f2c94c;
+  color: inherit;
+}
+#sugg li svg,
+#mList li svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+#sugg .sg-star {
+  font: 700 18px "Caveat", cursive;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+#toast.act {
+  pointer-events: auto;
+}
+#toast button {
+  font: 700 20px "Caveat", cursive;
+  margin-left: 10px;
+  background: transparent;
+  border: 2px dashed var(--ink);
+  border-radius: 8px;
+  padding: 0 8px;
+  cursor: pointer;
+}
+#tb button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+#pind,
+#sharedd,
+#expd {
+  top: 50%;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+  max-height: calc(100% - 30px);
+  overflow: auto;
+  font-size: 20px;
+}
+#pind h2,
+#sharedd h2,
+#expd h2 {
+  margin: 0;
+  font: 700 26px "Caveat", cursive;
+}
+#expd fieldset {
+  border: 2px dashed var(--ink);
+  border-radius: 8px;
+  margin: 0;
+  padding: 2px 8px 4px;
+}
+#expd legend {
+  font-weight: 700;
+  padding: 0 4px;
+}
+#expd label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 12px;
+}
+#expd fieldset:has(#eMarkers) label {
+  display: flex;
+}
+#eProg {
+  width: 100%;
+}
+.small.warn {
+  background: #f4dcae;
+  border: 1.5px solid #a06a1c;
+  border-radius: 6px;
+  padding: 4px 7px;
+}
+#sharedSummary ul {
+  margin: 4px 0;
+  padding-left: 20px;
+  max-height: 130px;
+  overflow: auto;
+}
+#tb #roleBtn {
+  width: auto;
+  padding: 0 10px;
+  font-size: 19px;
+  white-space: nowrap;
+}
+#tb #roleBtn.role-dm {
+  background: #8c1f1f;
+  color: #fff6de;
+  border: 2px solid #5a1010;
+}
+#tb #roleBtn.role-pl {
+  background: #2f6b3a;
+  color: #fff6de;
+  border: 2px solid #1c4524;
+}
+#roleBar {
+  position: fixed;
+  top: calc(6px + env(safe-area-inset-top, 0px));
+  right: 14px;
+  z-index: 8;
+  pointer-events: none;
+  background: #8c1f1f;
+  color: #fff6de;
+  font: 700 20px "Caveat", cursive;
+  padding: 2px 16px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+}
+#roleBar:empty {
+  display: none;
+}
+#roleFrame {
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+body.dm-mode #roleFrame {
+  box-shadow: inset 0 0 0 5px #a02020;
+}
+@media (max-width: 700px) {
+  #roleBar {
+    top: calc(64px + env(safe-area-inset-top, 0px));
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    padding: 1px 10px;
+    border-radius: 0 0 10px 10px;
+  }
+}

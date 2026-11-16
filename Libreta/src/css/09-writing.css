@@ -1,0 +1,63 @@
+
+.text {
+    position: absolute;
+    inset: 5cqw 3.6cqw 6cqw;
+
+    outline: none;
+    overflow: hidden;
+
+    font-family: var(--f);
+    font-size: 2.7cqw;
+    line-height: var(--lh);
+
+    word-wrap: break-word;
+    z-index: 1;
+}
+
+body.lines .text {
+    background: repeating-linear-gradient(
+        transparent 0 calc(var(--lh) - 1px),
+        rgba(110, 70, 30, .28) calc(var(--lh) - 1px) var(--lh)
+    );
+}
+
+.text div,
+.text p {
+    margin: 0;
+}
+
+.text h2 {
+    font-family: 'Uncial Antiqua', serif;
+    font-weight: 400;
+
+    font-size: 3.4cqw;
+    line-height: calc(var(--lh) * 2);
+
+    margin: 0;
+    text-align: center;
+    color: #6b1e12;
+}
+
+.text:empty::before {
+    content: "Escribe aquí…";
+    opacity: .35;
+}
+
+.pages .text:focus {
+    background-color: rgba(255, 255, 255, .12);
+}
+
+.num {
+    position: absolute;
+
+    bottom: 2.2cqw;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+    font-style: italic;
+    font-size: 1.8cqw;
+
+    opacity: .6;
+    z-index: 3;
+}
